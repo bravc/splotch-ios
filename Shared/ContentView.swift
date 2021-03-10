@@ -8,9 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    struct PlaylistGenerator: View {
+        var body: some View {
+            Text("Generate Playlist")
+        }
+    }
+    
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+            TabView {
+                NavigationView {
+                    TopSongs()
+                        .navigationBarTitle(Text("Splotch"))
+                }.tabItem {
+                    Image(systemName: "list.dash")
+                    Text("Top")
+                }
+                Profile()
+                    .tabItem {
+                        Image(systemName: "person")
+                        Text("Profile")
+                    }
+            }
     }
 }
 
